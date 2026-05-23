@@ -1,8 +1,7 @@
 ## Things to add
-- brewfile
-
 - mac config
 	- Turn off auto screen dim
 	- Set clock to show seconds
+	- disable .DS_store
 
 - bash_profile that includes work stuff
