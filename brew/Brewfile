@@ -1,22 +1,42 @@
 tap "hashicorp/tap"
 tap "homebrew/services"
+# Converts boring normal dates to fun Discordian Date
 brew "ddate"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Powerful, lightweight programming language
+brew "lua"
+# NCurses Disk Usage
 brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx", restart_service: :changed
+# 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+# It's not just a linter that annoys you!
 brew "pylint"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Code-search similar to ack
 brew "the_silver_searcher"
+# Terminal multiplexer
 brew "tmux"
+# Parser generator tool
 brew "tree-sitter-cli"
+# Internet file retriever
 brew "wget"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Development environment
 cask "vagrant"
 go "golang.org/x/tools/gopls"
 go "golang.org/x/vuln/cmd/govulncheck"
