@@ -18,6 +18,9 @@ path_add() {
 ## Add mysql to $PATH
 path_add "/usr/local/mysql/bin/"
 
+## Add luarocks bin to path
+path_add "$HOME/.luarocks/bin/"
+
 ## Setup GOPATH
 export GOPATH=$HOME/go
 path_add "$GOPATH/bin"
