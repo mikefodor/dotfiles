@@ -1,5 +1,7 @@
 tap "hashicorp/tap"
 tap "homebrew/services"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Converts boring normal dates to fun Discordian Date
 brew "ddate"
 # Simple, fast and user-friendly alternative to find
@@ -10,6 +12,8 @@ brew "ffmpeg"
 brew "imagemagick"
 # Powerful, lightweight programming language
 brew "lua"
+# Package manager for the Lua programming language
+brew "luarocks"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
