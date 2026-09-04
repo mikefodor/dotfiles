@@ -3,5 +3,6 @@
 	- Turn off auto screen dim
 	- Set clock to show seconds
 	- disable .DS_store
+  - Disable dictation
 
 - bash_profile that includes work stuff
