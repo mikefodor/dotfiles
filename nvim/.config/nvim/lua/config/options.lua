@@ -14,6 +14,12 @@ vim.opt.listchars = { tab = "»»", trail = "·", nbsp = "␣" }
 -- Minimal number of lines to keep above and below the cursor
 vim.o.scrolloff = 10
 
+-- Set the spellfile to be part of my config. The default file is saved in
+-- `~/.local/share/nvim/site/spell/en.utf-8.add`
+-- I don't want to have to re-add all the words if I ever switch to a new
+-- environment
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+
 -- Trying ui2 instead of noice
 require("vim._core.ui2").enable({
   enable = true, -- Whether to enable or disable the UI.
