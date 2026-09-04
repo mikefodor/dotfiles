@@ -3,6 +3,9 @@
 	- Turn off auto screen dim
 	- Set clock to show seconds
 	- disable .DS_store
-  - Disable dictation
+ 	- Disable dictation
+
+- neovim config
+    - Default to 4 spaces when doing a tab in a markdown file
 
 - bash_profile that includes work stuff
