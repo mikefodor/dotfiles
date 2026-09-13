@@ -7,6 +7,7 @@ return {
         "gomod",
         "gosum",
         "gowork",
+        "mermaid",
       })
     end,
   },
