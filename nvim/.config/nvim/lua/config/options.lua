@@ -3,10 +3,10 @@
 -- Add any additional options here
 
 -- Set tab to 4 spaces
-vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.tabstop = 4 -- Visual width of a tab
-vim.opt.shiftwidth = 4 -- Size of an indent
-vim.opt.softtabstop = 4 -- Number of spaces a tab counts for while editing
+-- vim.opt.expandtab = true -- Use spaces instead of tabs
+-- vim.opt.tabstop = 4 -- Visual width of a tab
+-- vim.opt.shiftwidth = 4 -- Size of an indent
+-- vim.opt.softtabstop = 4 -- Number of spaces a tab counts for while editing
 
 vim.opt.relativenumber = false
 
