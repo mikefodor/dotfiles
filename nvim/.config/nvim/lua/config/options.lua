@@ -26,6 +26,9 @@ vim.o.scrolloff = 10
 -- environment
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
+-- Disable mouse
+vim.opt.mouse = ""
+
 -- Trying ui2 instead of noice
 require("vim._core.ui2").enable({
   enable = true, -- Whether to enable or disable the UI.

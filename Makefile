@@ -1,7 +1,7 @@
 STOW_DIR := $(HOME)/dotfiles
 TARGET := $(HOME)
 
-PACKAGES := nvim bash tmux
+PACKAGES := nvim bash tmux wezterm
 
 .PHONY: stow unstow restow
 
