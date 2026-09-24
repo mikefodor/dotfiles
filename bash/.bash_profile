@@ -3,7 +3,7 @@ export PATH="$PATH:/Users/mike/.docker/bin"
 # End of Docker Desktop section.
 
 export EDITOR='nvim'
-PS1='\n┬─\u@\h:\W : \t [$?]\n╰──\$ '
+PS1='\n─────┬─\u@\h:\W : \t [$?]\n╰──\$ '
 
 alias ll="ls -l"
 alias cdgitroot='cd $(git rev-parse --show-toplevel)'
