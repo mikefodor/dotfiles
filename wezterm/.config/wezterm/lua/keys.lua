@@ -10,7 +10,7 @@ function M.apply_to_config(config)
 		{
 			key = "w",
 			mods = "CMD",
-			action = wezterm.action_callback(function(window)
+			action = wezterm.action_callback(function(window, pane)
 				window:set_right_status(wezterm.format({
 					{ Foreground = { Color = "orange" } },
 					{ Text = "That doesn't close WezTerm tabs" },
@@ -31,7 +31,7 @@ function M.apply_to_config(config)
 			mods = "LEADER",
 			action = act.PromptInputLine({
 				description = "Name of the tab",
-				action = wezterm.action_callback(function(window, line)
+				action = wezterm.action_callback(function(window, pane, line)
 					if line then
 						window:active_tab():set_title(line)
 					end
