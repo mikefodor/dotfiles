@@ -3,10 +3,41 @@ local act = wezterm.action
 
 local M = {}
 
---config.keys = {
--- { key = "w", mods = "CMD", action = act.DisableDefaultAssignment },
 function M.apply_to_config(config)
+	config.key_tables = {
+		activate_tab = {},
+		move_tab = {},
+	}
+
+	-- Set key table for actions to activate tabs
+	for i = 0, 9 do
+		table.insert(config.key_tables.activate_tab, {
+			key = tostring(i),
+			action = act.ActivateTab(i - 1),
+		})
+	end
+	table.insert(config.key_tables.activate_tab, {
+		key = "Escape",
+		action = act.PopKeyTable,
+	})
+
+	-- Set key table for actions to moving tabs
+	for i = 1, 9 do
+		table.insert(config.key_tables.move_tab, {
+			key = tostring(i),
+			action = act.MoveTab(i - 1),
+		})
+	end
+	table.insert(config.key_tables.activate_tab, {
+		key = "Escape",
+		action = act.PopKeyTable,
+	})
+
 	config.keys = {
+
+		-- Don't delete tab or window on CMD+w.  It's used all the time for
+		-- browser tabs and I accidentally delete my terminals too often
+		-- with it.
 		{
 			key = "w",
 			mods = "CMD",
@@ -24,10 +55,10 @@ function M.apply_to_config(config)
 
 		-- Create and Close tab
 		{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
-		{ key = "w", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
+		{ key = "w", mods = "LEADER", action = act.CloseCurrentTab({ confirm = false }) },
 
 		{
-			key = "r",
+			key = ",",
 			mods = "LEADER",
 			action = act.PromptInputLine({
 				description = "Name of the tab",
@@ -42,6 +73,27 @@ function M.apply_to_config(config)
 		-- Move between tabs left and right
 		{ key = "h", mods = "LEADER|CTRL", action = act.ActivateTabRelative(-1) },
 		{ key = "l", mods = "LEADER|CTRL", action = act.ActivateTabRelative(1) },
+
+		-- Activate tabs
+		{
+			key = "a",
+			mods = "LEADER",
+			action = act.ActivateKeyTable({
+				name = "activate_tab",
+				timeout_milliseconds = 3000,
+			}),
+		},
+		-- { key = tostring(i), modes = "LEADER|CTRL", action = act.ActivateTab(i - 1) },
+
+		-- Move tabs
+		{
+			key = "m",
+			mods = "LEADER|CTRL",
+			action = act.ActivateKeyTable({
+				name = "move_tab",
+				timeout_milliseconds = 3000,
+			}),
+		},
 
 		-- Split window into panes
 		{
