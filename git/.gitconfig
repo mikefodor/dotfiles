@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Mike Fodor
+	email = mfodor27@gmail.com
+[push]
+	default = current
+[core]
+	fileMode = true
+	editor = nvim
+[hub]
+	host = github.com
+[merge "ours"]
+	driver = true
+[pull]
+	rebase = true
