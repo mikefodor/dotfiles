@@ -6,6 +6,13 @@ config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.font_size = 16
 config.color_scheme = "ForestBlue"
 
+-- There is a weird thing with the nightly wezterm on macOS 27
+-- where the title bar is completely transparent so we want to
+-- add some opacity
+config.window_background_opacity = 0.99
+
+
+
 -- Start mux server so it runs in the background so sessions can be restored
 config.unix_domains = {
 	{ name = "unix" },
