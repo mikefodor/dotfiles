@@ -28,7 +28,7 @@ function M.apply_to_config(config)
 			action = act.MoveTab(i - 1),
 		})
 	end
-	table.insert(config.key_tables.activate_tab, {
+	table.insert(config.key_tables.move_tab, {
 		key = "Escape",
 		action = act.PopKeyTable,
 	})
