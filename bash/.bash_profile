@@ -5,6 +5,10 @@ export PATH="$PATH:/Users/mike/.docker/bin"
 export EDITOR='nvim'
 PS1='\n─────┬─\u@\h:\W : \t [$?]\n╰──\$ '
 
+# Add colors to ls output
+eval "$(gdircolors)"
+alias ls="gls --color=auto"
+
 alias ll="ls -l"
 alias cdgitroot='cd $(git rev-parse --show-toplevel)'
 alias cdvault="cd ~/vaults/ObsidianVault/"
