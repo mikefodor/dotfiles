@@ -1,0 +1,13 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 16
+theme = "Night Owl"
+#theme = "Forest Blue"
+
+# Open and close tabs
+keybind = ctrl+space>c=new_tab
+keybind = ctrl+space>w=close_tab
+confirm-close-surface = false
+
+# Navigate Tabs
+keybind = ctrl+space>ctrl+h=previous_tab
+keybind = ctrl+space>ctrl+l=next_tab
