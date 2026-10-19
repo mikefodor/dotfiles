@@ -1,9 +1,9 @@
-# The following lines were added by Docker Desktop to add commands to your PATH.
-export PATH="$PATH:/Users/mike/.docker/bin"
-# End of Docker Desktop section.
+shopt -s globstar
 
 export EDITOR='nvim'
 PS1='\n─────┬─\u@\h:\W : \t [$?]\n╰──\$ '
+
+[ -f ~/.pmg_work ] && export IS_WORK=1
 
 # Add colors to ls output
 eval "$(gdircolors)"

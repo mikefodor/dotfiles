@@ -9,3 +9,9 @@
     - Default to 4 spaces when doing a tab in a markdown file
 
 - bash_profile that includes work stuff
+  - Add aws dir
+  - Add claude dir
+  - Add powershell dir
+  - Add bash stuff in pmg_work directory
+  - Add sonarlint plugin in neovim
+  - Add sonar-init script into bash setup
