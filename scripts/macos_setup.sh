@@ -14,7 +14,6 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -55,7 +54,6 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -67,6 +65,8 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGestu
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 2
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 2
 
+# Do nothing when pressing the 'fn' key
+defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 
 ###############################################################################
 # Energy saving                                                               #
@@ -137,12 +137,21 @@ defaults write com.apple.dock tilesize -int 45
 # disable "Click wallpaper to reveal desktop"
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
+# Show bluetooth in the control center
+# The second command is necesary for MDM setups which may be the case on work laptops
+# Running is not expected to cause issues and ensures the bluetooth icon will be
+# visible no matter which setup you have
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth"
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 18
+
+# The clock will include seconds
+defaults write com.apple.menuextra.clock ShowSeconds -bool true
+
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
