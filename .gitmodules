@@ -1,0 +1,4 @@
+[submodule "pmg_work"]
+	path = pmg_work
+	url = git@github.com:mikefodor/parshipmeet-dotfiles.git
+	branch = consolidation

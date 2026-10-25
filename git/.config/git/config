@@ -1,4 +1,6 @@
 # This is Git's per-user configuration file.
+[color]
+  ui = auto
 [user]
 	name = Mike Fodor
 	email = mfodor27@gmail.com
@@ -13,3 +15,6 @@
 	driver = true
 [pull]
 	rebase = true
+
+[include]
+  path = ~/.config/git/config_pmg_work
