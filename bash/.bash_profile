@@ -2,8 +2,15 @@ shopt -s globstar
 
 export EDITOR='nvim'
 PS1='\n─────┬─\u@\h:\W : \t [$?]\n╰──\$ '
+export XDG_CONFIG_HOME="$HOME/.config"
 
-[ -f ~/.pmg_work ] && export IS_WORK=1
+[ -d ~/.config/bash/pmg_work ] && export IS_PMG_WORK=1
+
+# Make sure bash 5 is in /etc/shells.  This may not actually work because
+# it needs to authenticate for sudo
+if [ "$(grep -c "/opt/homebrew/bin/bash" /etc/shells)" == 0 ]; then
+  echo "/opt/homebrew/bin/bash" | sudo tee -a /etc/shells;
+fi
 
 # Add colors to ls output
 eval "$(gdircolors)"
@@ -12,8 +19,6 @@ alias ls="gls --color=auto"
 alias ll="ls -l"
 alias cdgitroot='cd $(git rev-parse --show-toplevel)'
 alias cdvault="cd ~/vaults/ObsidianVault/"
-alias ffprobe_size="ffprobe -v error -select_streams v:0 -show_entries stream=bit_rate -of default=noprint_wrappers=1"
-alias ffprobe_resolution="ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0"
 
 ## Append path to $PATH but don't allow duplicates
 path_add() {
@@ -44,7 +49,6 @@ if [[ -z "${NVM_DIR}" ]]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 fi
 
-alias ffprobe_size="ffprobe -v error -select_streams v:0 -show_entries stream=bit_rate -of default=noprint_wrappers=1"
-alias ffprobe_resolution="ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0"
+source $XDG_CONFIG_HOME/bash/ffmpeg.sh
 
-export FFMPEGARGS="-c:v libx264 -crf 24 -preset slow -c:a aac -b:a 128k"
+[ -n $IS_PMG_WORK ] && source $XDG_CONFIG_HOME/bash/.bash_pmg_work
