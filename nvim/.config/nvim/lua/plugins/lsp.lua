@@ -6,10 +6,16 @@ return {
       --opts = {
       ---@type lspconfig.options
       servers = {
-        gopls = {},
         bashls = {},
-        terraform = {},
-        ["json-lsp"] = {},
+        dockerls = {},
+        docker_compose_language_server = {},
+        jsonls = {},
+        gopls = {},
+        postgres_lsp = {
+          filetypes = { "sql", "pgsql" },
+        },
+        terraformls = {},
+        yamlls = {},
       },
     },
   },
