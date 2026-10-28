@@ -51,4 +51,4 @@ fi
 
 source $XDG_CONFIG_HOME/bash/ffmpeg.sh
 
-[ -n $IS_PMG_WORK ] && source $XDG_CONFIG_HOME/bash/.bash_pmg_work
+[ -n $IS_PMG_WORK ] && source $XDG_CONFIG_HOME/bash/pmg_work/init.sh
